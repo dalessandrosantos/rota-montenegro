@@ -32,76 +32,74 @@ class Empresa(models.Model):
         return self.nome
 
 
-class Rota(models.Model):
-    """Liga uma origem a um destino, operada por uma empresa."""
+class Linha(models.Model):
 
-    origem = models.ForeignKey(Localidade, on_delete=models.CASCADE, related_name="rotas_origem") # Ex.: montenegro.rotas_origem.all()
-    destino = models.ForeignKey(Localidade, on_delete=models.CASCADE, related_name="rotas_destino")
-    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, related_name="rotas")
+    class Tipo(models.TextChoices):
+        INTERMUNICIPAL = "INTERMUNICIPAL", "Intermunicipal"
+        INTERIORANO = "INTERIORANO", "Interiorano"
+        URBANO = "URBANO", "Urbano"
+        SELETIVO = "SELETIVO", "Seletivo"
+
+    nome = models.CharField(max_length=150)
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, related_name="linhas")
+    origem = models.ForeignKey(Localidade, on_delete=models.CASCADE, related_name="linhas_origem")
+    destino = models.ForeignKey(Localidade, on_delete=models.CASCADE, related_name="linhas_destino", null=True, blank=True, help_text="Deixe em branco para linhas urbanas circulares (sem destino fixo).")
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
 
     class Meta:
-        """Configurações e regras do modelo."""
-
-        verbose_name = "Rota"
-        verbose_name_plural = "Rotas"
-
-        # Impede rotas duplicadas para a mesma empresa.
+        verbose_name = "Linha"
+        verbose_name_plural = "Linhas"
         constraints = [
             models.UniqueConstraint(
-                fields=["origem", "destino", "empresa"],
-                name="rota_unica_por_empresa"
+                fields=["nome", "empresa"],
+                name="linha_nome_unico_por_empresa",
             )
         ]
 
     def __str__(self):
-            """Representação legível da rota."""
-            return f"{self.origem} -> {self.destino} ({self.empresa})"
+        return f"{self.nome} ({self.empresa})"
 
     def clean(self):
-        """Valida as regras de negócio da rota."""
-
-        # Origem e destino não podem ser a mesma localidade.
-        if self.origem_id and self.origem_id == self.destino_id:
+        if self.origem_id and self.destino_id and self.origem_id == self.destino_id:
             raise ValidationError("A origem não pode ser igual ao destino.")
 
     def save(self, *args, **kwargs):
-        """Valida o modelo antes de salvá-lo."""
         self.full_clean()
         super().save(*args, **kwargs)
 
 
 class Horario(models.Model):
-    """Um horário específico dentro de uma rota."""
+    """Um horário específico dentro de uma linha."""
 
-    class DiaSemana(models.IntegerChoices):
-        """Dias da semana permitidos para um horário."""
+    class Frequencia(models.TextChoices):
 
-        SEGUNDA = 0, "Segunda-feira"
-        TERCA = 1, "Terça-feira"
-        QUARTA = 2, "Quarta-feira"
-        QUINTA = 3, "Quinta-feira"
-        SEXTA = 4, "Sexta-feira"
-        SABADO = 5, "Sábado"
-        DOMINGO = 6, "Domingo"
+        SEG_SEX = "SEG_SEX", "Segunda a Sexta"
+        SEG_SAB = "SEG_SAB", "Segunda a Sábado"
+        TODOS_DIAS = "TODOS_DIAS", "Todos os dias"
+        DOM_FERIADOS = "DOM_FERIADOS", "Domingos e Feriados"
 
-    rota = models.ForeignKey(Rota, on_delete=models.CASCADE, related_name="horarios") # Ex.: rota.horarios.all()
-    dia_semana = models.IntegerField(choices=DiaSemana.choices)
+
+    linha = models.ForeignKey(Linha, on_delete=models.CASCADE, related_name="horarios")
     hora_saida = models.TimeField()
+    via = models.CharField(max_length=225, blank=True, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
+    frequencia = models.CharField(max_length=20, choices=Frequencia.choices)
     preco_estimado = models.DecimalField(
         max_digits=6,
         decimal_places=2,
+        null=True,
+        blank=True,  # nem toda fonte de dados informa preço — deixei opcional
         validators=[MinValueValidator(0)]
     )
 
     class Meta:
         verbose_name = "Horário"
         verbose_name_plural = "Horários"
-        ordering = ["dia_semana", "hora_saida"]
+        ordering = ["hora_saida"]
 
     def __str__(self):
-        return f"{self.rota} - {self.get_dia_semana_display()} {self.hora_saida}"
+        return f"{self.linha} - {self.hora_saida} ({self.get_frequencia_display()})"
 
     def save(self, *args, **kwargs):
         self.full_clean()
-        super.save(*args, **kwargs)
+        super().save(*args, **kwargs)
 

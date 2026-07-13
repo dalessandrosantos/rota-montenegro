@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Localidade, Empresa, Rota, Horario
+from .models import Localidade, Empresa, Linha, Horario
 
 @admin.register(Localidade)
 class LocalidadeAdmin(admin.ModelAdmin):
@@ -17,14 +17,14 @@ class HorarioInline(admin.TabularInline):
     model = Horario
     extra = 1  # quantas linhas em branco aparecem por padrão
 
-@admin.register(Rota)
-class RotaAdmin(admin.ModelAdmin):
-    list_display = ("orige", "destino", "empresa")
-    list_filter = ("origem", "destino", "empresa")
+@admin.register(Linha)
+class LinhaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "empresa", "origem","destino")
+    list_filter = ("empresa", "origem", "destino")
     inlines = [HorarioInline]
 
 @admin.register(Horario)
 class HorarioAdmin(admin.ModelAdmin):
-    list_display = ("rota", "dia_semana", "hora_saida", "preco_estimado")
-    list_filter = ("dia_semana")
-
+    list_display = ("linha", "hora_saida", "via", "frequencia","preco_estimado")
+    list_filter = ("frequencia",)
+    search_fields = ("via",)

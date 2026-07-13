@@ -1,0 +1,17 @@
+{% extends "transportes/base.html" %}
+
+{% block title %}Rota Montenegro{% endblock title %}
+
+{% block content %}
+
+    <h1>Horários Urbano</h1>
+
+{% for linha in linhas %}
+    <h2>{{ linha.nome }}</h2>
+    {% for horario in linha.horarios.all %}
+        <p>{{ horario.hora_saida }} - {{ horario.via }} ({{ horario.get_frequencia_display }})</p>
+    {% endfor %}
+{% endfor %}
+
+{% endblock content %}
+
