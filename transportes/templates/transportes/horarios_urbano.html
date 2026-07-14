@@ -11,10 +11,9 @@
         <h2 class="mb-4 titulo-linha"> Linha {{ linha.nome }}</h2>
 
         <div class="row g-4">
-            {% regroup linha.horarios.all|dictsort:"sentido" by sentido as grupos_sentido %}
-            {% for grupo in grupos_sentido %}
+            {% for sentido, horarios in linha.grupos_sentido.items %}
             <div class="col-12 col-md-6">
-                <h5 class="mb-3">Saídas: {{ grupo.grouper }}</h5>
+                <h5 class="mb-3">Saídas: {{ sentido }}</h5>
                 <div class="table-responsive">
                     <table class="table table-hover align-middle tabela-horarios">
                         <thead>
@@ -25,7 +24,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for horario in grupo.list %}
+                            {% for horario in horarios %}
                             <tr>
                                 <td>{{ horario.hora_saida }}</td>
                                 <td>{{ horario.via }}</td>
