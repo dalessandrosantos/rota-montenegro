@@ -2,10 +2,40 @@
 
 {% block title %}Home{% endblock title %}
 
-<div class="container text-center mt-5">
 {% block content %}
-    <h1>Home</h1>
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="w-100">
 
-    <h2><a href="{% url 'urbano' %}">Urbano Montenegro</a></h2>
-{% endblock content %}
+        <!-- título -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 col-sm-8 col-lg-5">
+                <div class="border rounded-4 py-4 text-center card-titulo">
+                    <h1 class="m-0">Rota Montenegro</h1>
+                    <p class="mb-0">Consulte os horários</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- botões -->
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-12 col-sm-6 col-lg-5">
+                <a href="{% url 'urbano' %}" class="btn w-100 py-4 fs-4">Urbano</a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-5">
+                <a href="#" class="btn  w-100 py-4 fs-4 btn-secondary disabled"  tabindex="-1">Intermunicipal</a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-5">
+                <a href="#" class="btn w-100 py-4 fs-4 btn-secondary disabled" aria-disabled="true" tabindex="-1">Interiorano</a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-5">
+                <a href="#" class="btn w-100 py-4 fs-4 btn-secondary disabled" aria-disabled="true" tabindex="-1">Seletivo</a>
+            </div>
+
+        </div>
+    </div>
 </div>
+{% endblock content %}

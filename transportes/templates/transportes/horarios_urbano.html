@@ -1,17 +1,44 @@
 {% extends "transportes/base.html" %}
 
-{% block title %}Rota Montenegro{% endblock title %}
+{% block title %}Horários Urbano{% endblock title %}
 
 {% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Horários Urbano</h1>
 
-    <h1>Horários Urbano</h1>
+    {% for linha in linhas %}
+    <div class="mb-5">
+        <h2 class="mb-4 titulo-linha"> Linha {{ linha.nome }}</h2>
 
-{% for linha in linhas %}
-    <h2>{{ linha.nome }}</h2>
-    {% for horario in linha.horarios.all %}
-        <p>{{ horario.hora_saida }} - {{ horario.via }} ({{ horario.get_frequencia_display }})</p>
+        <div class="row g-4">
+            {% regroup linha.horarios.all|dictsort:"sentido" by sentido as grupos_sentido %}
+            {% for grupo in grupos_sentido %}
+            <div class="col-12 col-md-6">
+                <h5 class="mb-3">Saídas: {{ grupo.grouper }}</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle tabela-horarios">
+                        <thead>
+                            <tr>
+                                <th>Horário</th>
+                                <th>Via</th>
+                                <th>Frequência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for horario in grupo.list %}
+                            <tr>
+                                <td>{{ horario.hora_saida }}</td>
+                                <td>{{ horario.via }}</td>
+                                <td>{{ horario.get_frequencia_display }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     {% endfor %}
-{% endfor %}
-
+</div>
 {% endblock content %}
-

@@ -80,16 +80,18 @@ class Horario(models.Model):
 
 
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE, related_name="horarios")
+    sentido = models.CharField(max_length=120, help_text="Ex.: Rodoviária, Germano Henke, Hospital MOntenegro...")
     hora_saida = models.TimeField()
-    via = models.CharField(max_length=225, blank=True, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
+    via = models.CharField(max_length=225, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
     frequencia = models.CharField(max_length=20, choices=Frequencia.choices)
     preco_estimado = models.DecimalField(
         max_digits=6,
         decimal_places=2,
         null=True,
-        blank=True,  # nem toda fonte de dados informa preço — deixei opcional
+        blank=True,  # nem toda fonte de dados informa preço deixei opcional
         validators=[MinValueValidator(0)]
     )
+
 
     class Meta:
         verbose_name = "Horário"

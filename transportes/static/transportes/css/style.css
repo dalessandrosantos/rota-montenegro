@@ -1,0 +1,85 @@
+:root {
+    --cor-fundo: #F5F5DC;
+    --cor-botao: #95BDD7;
+    --cor-botao-hover: #95bdd78a;
+    --cor-texto: #484D51;
+    --cor-destaque: #74c5de;
+}
+
+body {
+    background-color: #D2E4F1;
+    color: var(--cor-texto);
+    font-family: "Poppins", sans-serif;
+}
+
+.card-titulo {
+    background-color: var(--cor-destaque);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+a {
+    text-decoration: none;
+}
+
+.btn {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto);
+    border: none;
+
+    transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    background-color: var(--cor-botao-hover);
+    color: var(--cor-texto);
+    transform: translateY(-3px);
+}
+
+
+/* tabelas */
+
+.titulo-linha {
+    border-left: 4px solid var(--cor-botao);
+    padding-left: 0.75rem;
+}
+
+.tabela-horarios thead {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto);
+}
+
+.tabela-horarios th {
+    font-weight: 600;
+    border: none;
+}
+
+.tabela-horarios td {
+    border-color: var(--cor-fundo);
+}
+
+.tabela-horarios tbody tr:hover {
+    background-color: var(--cor-botao-hover) !important;
+}
+
+.tabela-horarios {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.tabela-horarios thead {
+    background-color: var(--cor-botao);
+}
+
+.tabela-horarios thead th {
+    background-color: var(--cor-botao);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.tabela-horarios td {
+    border-color: var(--cor-fundo);
+}
+
+.tabela-horarios tbody tr:hover {
+    background-color: var(--cor-botao-hover) !important;
+}
