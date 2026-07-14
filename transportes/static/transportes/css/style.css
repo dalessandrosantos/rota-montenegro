@@ -1,9 +1,10 @@
 :root {
-    --cor-fundo: #F5F5DC;
+    --cor-fundo: #D2E4F1;
     --cor-botao: #95BDD7;
-    --cor-botao-hover: #95bdd78a;
+    --cor-botao-hover: #7eb2df;
     --cor-texto: #484D51;
     --cor-destaque: #74c5de;
+
 }
 
 body {
@@ -38,12 +39,12 @@ a {
 /* tabelas */
 
 .titulo-linha {
-    border-left: 4px solid var(--cor-botao);
+    border-left: 4px solid var(--cor-destaque);
     padding-left: 0.75rem;
 }
 
 .tabela-horarios thead {
-    background-color: var(--cor-botao);
+    background-color: var(--cor-destaque);
     color: var(--cor-texto);
 }
 
@@ -66,12 +67,12 @@ a {
 }
 
 .tabela-horarios thead {
-    background-color: var(--cor-botao);
+    background-color: var(--cor-destaque);
 }
 
 .tabela-horarios thead th {
-    background-color: var(--cor-botao);
-    color: #fff;
+    background-color: var(--cor-destaque);
+    color: black;
     font-weight: 600;
     border: none;
 }
