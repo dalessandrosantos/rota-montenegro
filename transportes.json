@@ -1,0 +1,2096 @@
+[
+{
+    "model": "transportes.localidade",
+    "pk": 1,
+    "fields": {
+        "nome": "Rodoviária",
+        "e_centro": true
+    }
+},
+{
+    "model": "transportes.localidade",
+    "pk": 2,
+    "fields": {
+        "nome": "Germano Henke",
+        "e_centro": false
+    }
+},
+{
+    "model": "transportes.empresa",
+    "pk": 1,
+    "fields": {
+        "nome": "Silas - Serviços de Transportes Urbanos",
+        "telefone": ""
+    }
+},
+{
+    "model": "transportes.empresa",
+    "pk": 2,
+    "fields": {
+        "nome": "SILAS - Serviços de Transportes Urbanos Ltda",
+        "telefone": ""
+    }
+},
+{
+    "model": "transportes.linha",
+    "pk": 1,
+    "fields": {
+        "nome": "Germano Henke",
+        "empresa": 1,
+        "origem": 1,
+        "destino": 2,
+        "tipo": "URBANO"
+    }
+},
+{
+    "model": "transportes.linha",
+    "pk": 3,
+    "fields": {
+        "nome": "Convencional",
+        "empresa": 2,
+        "origem": 1,
+        "destino": null,
+        "tipo": "URBANO"
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 1,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "05:00:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 2,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "05:20:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 3,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "06:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 4,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "06:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 5,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "06:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 6,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "07:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 7,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "07:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 8,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "07:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 9,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "07:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 10,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "08:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 11,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "08:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 12,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "08:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 13,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "08:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 14,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "09:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 15,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "09:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 16,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "09:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 17,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "09:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 18,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "10:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 19,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "10:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 20,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "10:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 21,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "10:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 22,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "11:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 23,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "11:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 24,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "11:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 25,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "11:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 26,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "12:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 27,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "12:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 28,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "12:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 29,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "12:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 30,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "13:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 31,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "13:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 32,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "13:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 33,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "13:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 34,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "14:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 35,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "14:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 36,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "14:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 37,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "14:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 38,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "15:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 39,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "15:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 40,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "15:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 41,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "15:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 42,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "16:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 43,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "16:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 44,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "16:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 45,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "16:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 46,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "17:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 47,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "17:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 48,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "17:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 49,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "17:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 50,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "18:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 51,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "18:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 52,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "18:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 53,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "18:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 54,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "19:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 55,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "19:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 56,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "19:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 57,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "20:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 58,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "20:25:00",
+        "via": "Av.Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 59,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "21:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 60,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "21:25:00",
+        "via": "Av.Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 61,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "22:20:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 62,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "22:50:00",
+        "via": "Av.Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 63,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "23:15:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 64,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "23:35:00",
+        "via": "Av.Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 65,
+    "fields": {
+        "linha": 1,
+        "sentido": "Rodoviária",
+        "hora_saida": "00:05:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 66,
+    "fields": {
+        "linha": 1,
+        "sentido": "Germano Henke",
+        "hora_saida": "00:25:00",
+        "via": "Av.Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 133,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "05:00:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 134,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "06:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 135,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "06:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 136,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "07:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 137,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "07:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 138,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "08:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 139,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "08:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 140,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "09:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 141,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "09:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 142,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "10:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 143,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "10:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 144,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "11:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 145,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "11:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 146,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "12:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 147,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "12:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 148,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "13:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 149,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "13:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 150,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "14:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 151,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "14:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 152,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "15:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 153,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "15:35:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 154,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "16:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 155,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "16:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 156,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "17:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 157,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "17:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 158,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "18:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 159,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "18:35:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 160,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "19:00:00",
+        "via": "Tanac / São Paulo",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 161,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "20:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 162,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "21:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 163,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "22:20:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 164,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "23:15:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 165,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "00:05:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 166,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "05:20:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 167,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "06:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 168,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "07:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 169,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "07:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 170,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "08:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 171,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "08:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 172,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "09:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 173,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "09:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 174,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "10:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 175,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "10:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 176,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "11:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 177,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "11:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 178,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "12:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 179,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "12:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 180,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "13:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 181,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "13:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 182,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "14:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 183,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "14:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 184,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "15:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 185,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "15:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 186,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "16:00:00",
+        "via": "São Paulo / Av. Ivan Zimmer",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 187,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "16:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 188,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "17:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 189,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "17:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 190,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "18:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 191,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "18:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 192,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "19:00:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 193,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "19:30:00",
+        "via": "Zootecnia / Tanac",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 194,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "20:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 195,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "21:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 196,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "22:50:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SEX",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 197,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "23:35:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 198,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "00:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "SEG_SAB",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 199,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "05:00:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 200,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "06:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 201,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "07:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 202,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "08:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 203,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "09:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 204,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "10:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 205,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "11:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 206,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "12:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 207,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "13:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 208,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "14:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 209,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "15:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 210,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "16:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 211,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "17:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 212,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "18:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 213,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "19:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 214,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "20:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 215,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "21:00:00",
+        "via": "Tanac / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 216,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "23:15:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 217,
+    "fields": {
+        "linha": 3,
+        "sentido": "Rodoviária",
+        "hora_saida": "00:05:00",
+        "via": "José Luis / Zootecnia",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 218,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "05:20:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 219,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "06:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 220,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "07:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 221,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "08:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 222,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "09:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 223,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "10:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 224,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "11:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 225,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "12:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 226,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "13:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 227,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "14:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 228,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "15:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 229,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "16:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 230,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "17:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 231,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "18:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 232,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "19:30:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 233,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "20:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 234,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "21:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 235,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "23:35:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+},
+{
+    "model": "transportes.horario",
+    "pk": 236,
+    "fields": {
+        "linha": 3,
+        "sentido": "Germano Henke",
+        "hora_saida": "00:25:00",
+        "via": "Av. Julio Renner / Senai / Rodoviária",
+        "frequencia": "DOM_FERIADOS",
+        "preco_estimado": null
+    }
+}
+]
