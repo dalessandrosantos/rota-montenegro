@@ -6,7 +6,7 @@ def home(request):
 
 
 def urbano(request):
-    linhas = Linha.objects.filter(tipo=Linha.Tipo.URBANO)
+    linhas = Linha.objects.filter(tipo=Linha.Tipo.URBANO).order_by("id")
 
     # Ordena os horários de cada linha, mantendo horários da madrugada no final
     for linha in linhas:

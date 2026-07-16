@@ -76,7 +76,7 @@ class Horario(models.Model):
         SEG_SEX = "SEG_SEX", "Segunda a Sexta"
         SEG_SAB = "SEG_SAB", "Segunda a Sábado"
         TODOS_DIAS = "TODOS_DIAS", "Todos os dias"
-        DOM_FERIADOS = "DOM_FERIADOS", "Domingos e Feriados"
+        DOM_FERIADOS = "DOM_FERIADOS", "Domingos"
 
 
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE, related_name="horarios")
