@@ -8,25 +8,26 @@ def home(request):
 def urbano(request):
     linhas = Linha.objects.filter(tipo=Linha.Tipo.URBANO).order_by("id")
 
-    # Ordena os horários de cada linha, mantendo horários da madrugada no final
     for linha in linhas:
         horarios_ordenados = sorted(
             linha.horarios.all(),
             key=lambda h: (h.hora_saida.hour < 4, h.hora_saida)
         )
 
-        grupos_semana = {}
-        grupos_domingo = {}
+        grupos = {}
         for horario in horarios_ordenados:
-            destino = (
-                grupos_domingo
-                if horario.frequencia == Horario.Frequencia.DOM_FERIADOS
-                else grupos_semana
-            )
-            destino.setdefault(horario.sentido, []).append(horario)
+            grupos.setdefault(horario.frequencia, {}).setdefault(horario.sentido, []).append(horario)
 
-        linha.grupos_semana = grupos_semana
-        linha.grupos_domingo = grupos_domingo
+        grupos_ordenados = {}
+        for valor, label in Horario.Frequencia.choices:
+            if valor in grupos:
+                sentidos = grupos[valor]
+                sentidos_ordenados = dict(
+                    sorted(sentidos.items(), key=lambda item: item[0] != linha.origem.nome)
+                )
+                grupos_ordenados[label] = sentidos_ordenados
+
+        linha.grupos = grupos_ordenados
 
     context = {"linhas": linhas}
     return render(request, "transportes/horarios_urbano.html", context)
@@ -41,14 +42,37 @@ def intermunicipal(request):
         for horario in horarios:
             grupos.setdefault(horario.frequencia, {}).setdefault(horario.sentido, []).append(horario)
 
-        # Reordena os grupos seguindo a ordem definida em Horario.Frequencia
         grupos_ordenados = {}
         for valor, label in Horario.Frequencia.choices:
             if valor in grupos:
-                grupos_ordenados[label] = grupos[valor]
+                sentidos = grupos[valor]
+                sentidos_ordenados = dict(
+                    sorted(sentidos.items(), key=lambda item: item[0] != linha.origem.nome)
+                )
+                grupos_ordenados[label] = sentidos_ordenados
 
         linha.grupos = grupos_ordenados
 
-
     context = {"linhas": linhas}
     return render(request, "transportes/horarios_intermunicipal.html", context)
+
+
+def interiorano(request):
+    linhas = Linha.objects.filter(tipo=Linha.Tipo.INTERIORANO).order_by("id")
+
+    for linha in linhas:
+        horarios = linha.horarios.order_by("hora_saida")
+
+        grupos = {}
+        for horario in horarios:
+            grupos.setdefault(horario.sentido, []).append(horario)
+
+        # Origem (Rodoviária) sempre primeiro, independente do sentido cronológico
+        grupos_ordenados = dict(
+            sorted(grupos.items(), key=lambda item: item[0] != linha.origem.nome)
+        )
+
+        linha.grupos = grupos_ordenados
+
+    context = {"linhas": linhas}
+    return render(request, "transportes/horarios_interiorano.html", context)

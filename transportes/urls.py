@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path("", views.home, name="home"),
     path("urbano/", views.urbano, name="urbano"),
-    path("intermunicipal/", views.intermunicipal, name="intermunicipal")
+    path("intermunicipal/", views.intermunicipal, name="intermunicipal"),
+    path("interiorano/", views.interiorano, name="interiorano"),
 ]
 

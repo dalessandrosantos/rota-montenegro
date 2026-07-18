@@ -76,6 +76,7 @@ class Horario(models.Model):
         SEG_SEX = "SEG_SEX", "Segunda a Sexta"
         SEG_SAB = "SEG_SAB", "Segunda a Sábado"
         TODOS_DIAS = "TODOS_DIAS", "Todos os dias"
+        QUARTA = "QUARTA", "Quarta-feira"
         SABADO = "SABADO", "Sábados"
         DOM_FERIADOS = "DOM_FERIADOS", "Domingos"
 

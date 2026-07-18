@@ -1,6 +1,6 @@
 {% extends "transportes/base.html" %}
 
-{% block title %}Horários Intermunicipais - Rota Montenegro{% endblock title %}
+{% block title %}Horários Intermunicipais{% endblock title %}
 
 {% block content %}
 <div class="container my-5">
@@ -8,37 +8,39 @@
 
     {% for linha in linhas %}
     <div class="mb-5">
-        <h2 class="mb-5 titulo-linha">{{ linha.nome }}</h2>
+        <h2 class="mb-4 titulo-linha">{{ linha.nome }}</h2>
 
         {% for frequencia_label, sentidos in linha.grupos.items %}
-        <br>
-        <h4 class="mb-3 mb-4">{{ frequencia_label }}</h4>
+        <h4 class="mb-3 mt-4">{{ frequencia_label }}</h4>
         <div class="row g-4">
             {% for sentido, horarios in sentidos.items %}
             <div class="col-12 col-md-6">
-                <h5 class="mb-2">Sáidas: {{ sentido }}</h5>
+                <h5 class="mb-2">
+                    Saídas:
+                    {% if sentido == "Rodoviária" %}Rodoviária (Montenegro){% else %}{{ sentido }}{% endif %}
+                </h5>
 
                 <div class="table-responsive">
-                    <table class="table table-hover aling-middle tabela-horarios">
+                    <table class="table table-hover align-middle tabela-horarios">
                         <thead>
-                            <tr><th>Horários</th><th>Via</th></tr>
+                            <tr><th>Horário</th><th>Via</th></tr>
                         </thead>
                         <tbody>
                             {% for horario in horarios %}
                             <tr>
                                 <td>{{ horario.hora_saida }}</td>
-                                <td>{{ horario.via|default:"-" }}</td>
+                                <td>{{ horario.via|default:"—" }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
+                </div>
 
                 {% with primeiro=horarios.0 %}
                 {% if primeiro.observacoes %}
-                <p class="small text-muted mb-2">{{ primeiro.observacoes|linebreaksbr }}</p>
+                <p class="small text-muted mt-2">{{ primeiro.observacoes|linebreaksbr }}</p>
                 {% endif %}
                 {% endwith %}
-                </div>
             </div>
             {% endfor %}
         </div>

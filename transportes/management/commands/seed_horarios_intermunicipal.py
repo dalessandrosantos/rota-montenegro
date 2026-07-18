@@ -182,7 +182,7 @@ class Command(BaseCommand):
                 localidades[nome] = loc
             return localidades[nome]
 
-        montenegro = get_localidade("Montenegro", e_centro=True)
+        rodoviaria = get_localidade("Rodoviária", e_centro=True)
 
         nomes_para_remover = list(LINHAS_INTERMUNICIPAIS.keys())
         removidas, _ = Linha.objects.filter(nome__in=nomes_para_remover).delete()
@@ -191,10 +191,10 @@ class Command(BaseCommand):
 
         total_criados = 0
         for nome_linha, config in LINHAS_INTERMUNICIPAIS.items():
-            origem = montenegro if config["origem"] == "Montenegro" else get_localidade(config["origem"])
+            origem = rodoviaria if config["origem"] == "Montenegro" else get_localidade(config["origem"])
             destino = None
             if config["destino"]:
-                destino = montenegro if config["destino"] == "Montenegro" else get_localidade(config["destino"])
+                destino = rodoviaria if config["destino"] == "Montenegro" else get_localidade(config["destino"])
 
             linha, _ = Linha.objects.get_or_create(
                 nome=nome_linha,
@@ -216,6 +216,17 @@ class Command(BaseCommand):
                     observacoes=observacoes,
                 )
                 total_criados += 1
+
+        # Limpa a localidade "Montenegro" que ficou órfã (era usada antes, substituída por Rodoviária)
+        orfas = Localidade.objects.filter(nome="Montenegro").exclude(
+            id__in=Linha.objects.values_list("origem_id", flat=True)
+        ).exclude(
+        id__in=Linha.objects.values_list("destino_id", flat=True)
+        )
+        removidas_localidade, _ = orfas.delete()
+        if removidas_localidade:
+            self.stdout.write(self.style.WARNING("Localidade 'Montenegro' órfã removida (substituída por Rodoviária)."))
+
 
         self.stdout.write(self.style.SUCCESS(
             f"Concluído! {total_criados} horários criados em {len(LINHAS_INTERMUNICIPAIS)} linhas intermunicipais."
