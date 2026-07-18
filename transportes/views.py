@@ -31,3 +31,24 @@ def urbano(request):
     context = {"linhas": linhas}
     return render(request, "transportes/horarios_urbano.html", context)
 
+def intermunicipal(request):
+    linhas = Linha.objects.filter(tipo=Linha.Tipo.INTERMUNICIPAL).order_by("id")
+
+    for linha in linhas:
+        horarios = linha.horarios.order_by("hora_saida")
+
+        grupos = {}
+        for horario in horarios:
+            grupos.setdefault(horario.frequencia, {}).setdefault(horario.sentido, []).append(horario)
+
+        # Reordena os grupos seguindo a ordem definida em Horario.Frequencia
+        grupos_ordenados = {}
+        for valor, label in Horario.Frequencia.choices:
+            if valor in grupos:
+                grupos_ordenados[label] = grupos[valor]
+
+        linha.grupos = grupos_ordenados
+
+
+    context = {"linhas": linhas}
+    return render(request, "transportes/horarios_intermunicipal.html", context)

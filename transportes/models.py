@@ -76,13 +76,14 @@ class Horario(models.Model):
         SEG_SEX = "SEG_SEX", "Segunda a Sexta"
         SEG_SAB = "SEG_SAB", "Segunda a Sábado"
         TODOS_DIAS = "TODOS_DIAS", "Todos os dias"
+        SABADO = "SABADO", "Sábados"
         DOM_FERIADOS = "DOM_FERIADOS", "Domingos"
 
 
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE, related_name="horarios")
     sentido = models.CharField(max_length=120, help_text="Ex.: Rodoviária, Germano Henke, Hospital MOntenegro...")
     hora_saida = models.TimeField()
-    via = models.CharField(max_length=225, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
+    via = models.CharField(max_length=225, blank=True, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
     frequencia = models.CharField(max_length=20, choices=Frequencia.choices)
     preco_estimado = models.DecimalField(
         max_digits=6,
@@ -90,6 +91,10 @@ class Horario(models.Model):
         null=True,
         blank=True,  # nem toda fonte de dados informa preço deixei opcional
         validators=[MinValueValidator(0)]
+    )
+    observacoes = models.TextField(
+        blank=True,
+        help_text="Informações extras: pontos de embarque/desembarque, condições especiais etc."
     )
 
 
