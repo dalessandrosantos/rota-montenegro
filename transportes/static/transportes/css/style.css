@@ -120,3 +120,12 @@ a {
     background-color: #fff;
     padding: 1.25rem;
 }
+
+
+@media (max-width: 575.98px) {
+    .tabela-horarios th,
+    .tabela-horarios td {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.5rem;
+    }
+}
