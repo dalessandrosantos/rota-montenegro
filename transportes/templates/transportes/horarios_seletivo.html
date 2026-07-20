@@ -1,44 +1,45 @@
 {% extends "transportes/base.html" %}
 
-{% block title %}Horários Urbano{% endblock title %}
+{% block title %}Horários Seletivo{% endblock title %}
 
 {% block content %}
 <div class="container my-5">
-    <h1 class="text-center mb-5">Horários Urbano</h1>
+    <h1 class="text-center mb-5">Horários Seletivo</h1>
 
-    <div class="accordion" id="accordionUrbano">
+    <div class="accordion" id="accordionSeletivo">
         {% for linha in linhas %}
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapse-urbano-{{ forloop.counter }}"
+                        data-bs-target="#collapse-{{ forloop.counter }}"
                         aria-expanded="false">
-                    Linha {{ linha.nome }}
+                    {{ linha.nome }}
                 </button>
             </h2>
-            <div id="collapse-urbano-{{ forloop.counter }}" class="accordion-collapse collapse"
-                 data-bs-parent="#accordionUrbano">
+            <div id="collapse-{{ forloop.counter }}" class="accordion-collapse collapse"
+                 data-bs-parent="#accordionSeletivo">
                 <div class="accordion-body">
-                    {% for frequencia_label, sentidos in linha.grupos.items %}
-                    <h4 class="mb-3 mt-4">{{ frequencia_label }}</h4>
+                    {% for par in linha.pares %}
                     <div class="row g-4">
-                        {% for sentido, horarios in sentidos.items %}
+                        {% for sentido, horarios in par.colunas %}
                         <div class="col-12 col-md-6">
-                            <h5 class="mb-1">
+                            <h5 class="mb-2">
                                 Saídas:
                                 {% if sentido == "Rodoviária" %}Rodoviária (Montenegro){% else %}{{ sentido }}{% endif %}
                             </h5>
+
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle tabela-horarios">
                                     <thead>
-                                        <tr><th>Horário</th><th>Via</th></tr>
+                                        <tr><th>Horário</th><th>Via</th><th>Frequência</th></tr>
                                     </thead>
                                     <tbody>
                                         {% for horario in horarios %}
                                         <tr>
-                                            <td>{{ horario.hora_saida }}</td>
-                                            <td>{{ horario.via }}</td>
+                                            <td>{{ horario.hora_saida }}{% if horario.observacoes %} *{% endif %}</td>
+                                            <td>{{ horario.via|default:"—" }}</td>
+                                            <td>{{ horario.get_frequencia_display }}</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>
@@ -47,6 +48,10 @@
                         </div>
                         {% endfor %}
                     </div>
+
+                    {% for nota in par.notas %}
+                    <p class="small text-muted text-center mt-3 mb-4">{{ nota|linebreaksbr }}</p>
+                    {% endfor %}
                     {% endfor %}
                 </div>
             </div>

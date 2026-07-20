@@ -84,3 +84,39 @@ a {
 .tabela-horarios tbody tr:hover {
     background-color: var(--cor-botao-hover) !important;
 }
+
+/* Accordion */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+    background-color: var(--cor-botao);
+    color: var(--cor-texto);
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--cor-botao-hover);
+    color: var(--cor-texto);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--cor-botao);
+}
+
+.accordion-button::after {
+    filter: none;
+}
+
+.accordion-body {
+    background-color: #fff;
+    padding: 1.25rem;
+}

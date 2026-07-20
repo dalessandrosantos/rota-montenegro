@@ -76,3 +76,33 @@ def interiorano(request):
 
     context = {"linhas": linhas}
     return render(request, "transportes/horarios_interiorano.html", context)
+
+
+def seletivo(request):
+    linhas = Linha.objects.filter(tipo=Linha.Tipo.SELETIVO).order_by("id")
+
+    for linha in linhas:
+        horarios = linha.horarios.order_by("hora_saida")
+
+        grupos = {}
+        for horario in horarios:
+            grupos.setdefault(horario.sentido, []).append(horario)
+
+        sentidos_ordenados = sorted(grupos.items(), key=lambda item: item[0] != linha.origem.nome)
+
+        # Agrupa os sentidos em pares (mesma quantidade de colunas que aparece
+        # visualmente por fileira no Bootstrap: col-md-6 = 2 colunas por linha).
+        pares = []
+        for i in range(0, len(sentidos_ordenados), 2):
+            colunas = sentidos_ordenados[i:i + 2]
+            notas = []
+            for sentido, horarios_do_sentido in colunas:
+                for horario in horarios_do_sentido:
+                    if horario.observacoes and horario.observacoes not in notas:
+                        notas.append(horario.observacoes)
+            pares.append({"colunas": colunas, "notas": notas})
+
+        linha.pares = pares
+
+    context = {"linhas": linhas}
+    return render(request, "transportes/horarios_seletivo.html", context)

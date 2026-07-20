@@ -7,5 +7,6 @@ urlpatterns = [
     path("urbano/", views.urbano, name="urbano"),
     path("intermunicipal/", views.intermunicipal, name="intermunicipal"),
     path("interiorano/", views.interiorano, name="interiorano"),
+    path("seletivo/", views.seletivo, name="seletivo"),
 ]
 

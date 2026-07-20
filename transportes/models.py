@@ -73,16 +73,16 @@ class Horario(models.Model):
 
     class Frequencia(models.TextChoices):
 
-        SEG_SEX = "SEG_SEX", "Segunda a Sexta"
-        SEG_SAB = "SEG_SAB", "Segunda a Sábado"
-        TODOS_DIAS = "TODOS_DIAS", "Todos os dias"
+        SEG_SEX = "SEG_SEX", "2ª a 6ª"
+        SEG_SAB = "SEG_SAB", "2ª a Sábado"
+        TODOS_DIAS = "TODOS_DIAS", "Diário"
         QUARTA = "QUARTA", "Quarta-feira"
-        SABADO = "SABADO", "Sábados"
-        DOM_FERIADOS = "DOM_FERIADOS", "Domingos"
+        SABADO = "SABADO", "Sábado"
+        DOM_FERIADOS = "DOM_FERIADOS", "Domingo"
 
 
     linha = models.ForeignKey(Linha, on_delete=models.CASCADE, related_name="horarios")
-    sentido = models.CharField(max_length=120, help_text="Ex.: Rodoviária, Germano Henke, Hospital MOntenegro...")
+    sentido = models.CharField(max_length=120, help_text="Ex.: Rodoviária, Germano Henke, Hospital Montenegro...")
     hora_saida = models.TimeField()
     via = models.CharField(max_length=225, blank=True, help_text="Trajeto/pontos por onde passa, ex: 'Tanac / São Paulo'.")
     frequencia = models.CharField(max_length=20, choices=Frequencia.choices)
